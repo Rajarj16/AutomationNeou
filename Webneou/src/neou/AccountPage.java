@@ -6,26 +6,65 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 public class AccountPage {
 
+	private WebDriver driver;
+	private static String baseUrl;
 	
-	 public static void main(String[] args) throws InterruptedException{
+	
+	@BeforeMethod
+	public void setUp() throws InterruptedException{
 		    // TODO Auto-generated method stub
 
 		    System.setProperty("webdriver.chrome.driver", "C:\\Users\\Raja\\Desktop\\chromedriver\\chromedriver.exe");
-		    WebDriver driver = new ChromeDriver();
+		    driver = new ChromeDriver();
+		    baseUrl = "https://devleaderboard.neoufitness.com";
+		    Thread.sleep(5000);
 		    //gotoneouweb
-		    driver.get("https://devleaderboard.neoufitness.com");
+		    //driver.get("https://devleaderboard.neoufitness.com");
 		    driver.manage().window().maximize();
-		    driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]")).click();
-		    driver.findElement(By.id("custom-css-standard-input")).sendKeys("raja@vuedata.in");
+		    
+	}
+		    
+	@Test(description = "Validate User can log in with valid credentials and read the User Name from Home page")    
+			public void testUntitled() throws InterruptedException {   
+			driver.get(baseUrl);
+			driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]")).click();
+		    Thread.sleep(3000);
+		    driver.findElement(By.id("custom-css-standard-input")).sendKeys("neourj@gmail.com");
 		    driver.findElement(By.id("custom-css-standard-input")).sendKeys(Keys.ENTER);
 		    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		    driver.findElement(By.name("password")).sendKeys("Neou@123");
-		    driver.manage().timeouts().setScriptTimeout(10,TimeUnit.SECONDS);
 		    driver.findElement(By.name("password")).sendKeys(Keys.ENTER);
-		    driver.manage().timeouts().setScriptTimeout(10,TimeUnit.SECONDS);
+		    Thread.sleep(10000);
+		    driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]")).click();
+		    Thread.sleep(10000);
+		    driver.findElement(By.xpath("//span[contains(text(),'Fitness Profile')]")).click();
+		    Thread.sleep(2000);
+		    driver.findElement(By.name("zipCode")).sendKeys("10001");
+		    driver.findElement(By.xpath("//span[contains(text(),'Settings')]")).click();
+		    Thread.sleep(2000);
+		    driver.findElement(By.name("mobile")).sendKeys("1234567890");
+		    driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/div[1]/div[1]/button[4]/span[1]")).click();
+		    Thread.sleep(3000);
+		    if (driver.getPageSource().contains("Test")) {
+		        System.out.print("Account logged in");
+		      } else {
+
+		        System.out.print("Account logged in but Text not able to find");
+		        
+		      }
   }
+	
+	@AfterMethod
+	public void tearDown() throws InterruptedException  {
+	driver.findElement(By.linkText("HOME")).click();
+	Thread.sleep(5000);
+	driver.close();
 	 
+}
 }
