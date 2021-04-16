@@ -18,14 +18,12 @@ public class AccountPage {
 	
 	@BeforeMethod
 	public void setUp() throws InterruptedException{
-		    // TODO Auto-generated method stub
+		    // Neeed to seperate cases to run
 
 		    System.setProperty("webdriver.chrome.driver", "C:\\Users\\Raja\\Desktop\\chromedriver\\chromedriver.exe");
 		    driver = new ChromeDriver();
 		    baseUrl = "https://devleaderboard.neoufitness.com";
 		    Thread.sleep(5000);
-		    //gotoneouweb
-		    //driver.get("https://devleaderboard.neoufitness.com");
 		    driver.manage().window().maximize();
 		    
 	}
@@ -39,6 +37,30 @@ public class AccountPage {
 		    driver.findElement(By.id("custom-css-standard-input")).sendKeys(Keys.ENTER);
 		    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		    driver.findElement(By.name("password")).sendKeys("Neou@123");
+		    driver.findElement(By.name("password")).sendKeys(Keys.ENTER);
+		    Thread.sleep(10000);
+		    driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]")).click();
+		    Thread.sleep(10000);
+		    driver.findElement(By.xpath("//span[contains(text(),'Fitness Profile')]")).click();
+		    Thread.sleep(2000);
+		    driver.findElement(By.name("zipCode")).sendKeys("10001");
+		    driver.findElement(By.xpath("//span[contains(text(),'Settings')]")).click();
+		    Thread.sleep(2000);
+		    
+		   //Account and password change then re-login, navigate to Account and change ph no.
+		   //ToDo made this as seperate Test cases 
+		    driver.findElement(By.name("old_password")).sendKeys("Neou@123");
+		    driver.findElement(By.name("new_password")).sendKeys("Neou@1234");
+		    driver.findElement(By.xpath("//span[contains(text(),'Save New Password')]")).click();
+		    Thread.sleep(3000);
+		    driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/ul[3]/a[1]/div[1]/div[1]")).click();
+		    Thread.sleep(3000);
+		    driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]")).click();
+		    Thread.sleep(3000);
+		    driver.findElement(By.id("custom-css-standard-input")).sendKeys("neourj@gmail.com");
+		    driver.findElement(By.id("custom-css-standard-input")).sendKeys(Keys.ENTER);
+		    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		    driver.findElement(By.name("password")).sendKeys("Neou@1234	");
 		    driver.findElement(By.name("password")).sendKeys(Keys.ENTER);
 		    Thread.sleep(10000);
 		    driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]")).click();
