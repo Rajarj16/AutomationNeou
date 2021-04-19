@@ -25,11 +25,16 @@ public class AccountPage {
 		    baseUrl = "https://devleaderboard.neoufitness.com";
 		    Thread.sleep(5000);
 		    driver.manage().window().maximize();
+//		    driver.get("chrome://settings/clearBrowserData");
+//		    Thread.sleep(3000);
+//		    driver.findElement(By.linkText("Clear data")).click();
+		    driver.manage().window().maximize();
+		    
 		    
 	}
 		    
 	@Test(description = "Validate User can log in with valid credentials and read the User Name from Home page")    
-			public void testUntitled() throws InterruptedException {   
+			public void testAccount() throws InterruptedException {   
 			driver.get(baseUrl);
 			driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]")).click();
 		    Thread.sleep(3000);
@@ -50,9 +55,10 @@ public class AccountPage {
 		   //Account and password change then re-login, navigate to Account and change ph no.
 		   //ToDo made this as seperate Test cases 
 		    driver.findElement(By.name("old_password")).sendKeys("Neou@123");
-		    driver.findElement(By.name("new_password")).sendKeys("Neou@1234");
-		    driver.findElement(By.xpath("//span[contains(text(),'Save New Password')]")).click();
+		    driver.findElement(By.name("new_password")).sendKeys("Neou@123");
 		    Thread.sleep(3000);
+		    driver.findElement(By.xpath("//span[contains(text(),'Save New Password')]")).click();
+		    Thread.sleep(6000);
 		    driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/ul[3]/a[1]/div[1]/div[1]")).click();
 		    Thread.sleep(3000);
 		    driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]")).click();
@@ -60,7 +66,7 @@ public class AccountPage {
 		    driver.findElement(By.id("custom-css-standard-input")).sendKeys("neourj@gmail.com");
 		    driver.findElement(By.id("custom-css-standard-input")).sendKeys(Keys.ENTER);
 		    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-		    driver.findElement(By.name("password")).sendKeys("Neou@1234	");
+		    driver.findElement(By.name("password")).sendKeys("Neou@123");
 		    driver.findElement(By.name("password")).sendKeys(Keys.ENTER);
 		    Thread.sleep(10000);
 		    driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]")).click();
@@ -78,8 +84,25 @@ public class AccountPage {
 		      } else {
 
 		        System.out.print("Account logged in but Text not able to find");
-		        
 		      }
+		      
+	}
+		    
+	@Test(description = "Validate User can log in with valid credentials and read the User Name from Home page")    
+	public void testFitness() throws InterruptedException {
+		    driver.get(baseUrl);
+		    driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]")).click();
+		    Thread.sleep(3000);
+		    driver.findElement(By.id("custom-css-standard-input")).sendKeys("neourj@gmail.com");
+		    driver.findElement(By.id("custom-css-standard-input")).sendKeys(Keys.ENTER);
+		    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		    driver.findElement(By.name("password")).sendKeys("Neou@123");
+		    driver.findElement(By.name("password")).sendKeys(Keys.ENTER);
+		    Thread.sleep(10000);
+		    driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]")).click();
+		    Thread.sleep(10000);
+		    driver.findElement(By.xpath("//span[contains(text(),'Fitness Profile')]")).click();
+		    Thread.sleep(2000);
   }
 	
 	@AfterMethod
