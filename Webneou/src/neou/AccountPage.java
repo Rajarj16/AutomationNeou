@@ -25,9 +25,6 @@ public class AccountPage {
 		    baseUrl = "https://devleaderboard.neoufitness.com";
 		    Thread.sleep(5000);
 		    driver.manage().window().maximize();
-//		    driver.get("chrome://settings/clearBrowserData");
-//		    Thread.sleep(3000);
-//		    driver.findElement(By.linkText("Clear data")).click();
 		    driver.manage().window().maximize();
 		    
 		    
@@ -103,6 +100,30 @@ public class AccountPage {
 		    Thread.sleep(10000);
 		    driver.findElement(By.xpath("//span[contains(text(),'Fitness Profile')]")).click();
 		    Thread.sleep(2000);
+//		    JavascriptExecutor js = (JavascriptExecutor) driver;
+//		    js.executeScript("window.scrollBy(0,350)", "");
+		    Thread.sleep(2000);
+		    driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/section[2]/div[4]/div[1]/div[1]/div[1]")).click();
+		    Thread.sleep(1000);
+		    driver.findElement(By.xpath("//body/div[@id='menu-fitness-profile-qa']/div[3]/ul[1]/li[1]")).click();
+		    Thread.sleep(2000);
+		    driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/section[2]/div[4]/div[2]/div[1]/div[1]")).click();
+		    Thread.sleep(2000);
+		    driver.findElement(By.xpath("//body/div[@id='menu-fitness-profile-qa']/div[3]/ul[1]/li[4]")).click();
+		    Thread.sleep(2000);
+//		    driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/section[2]/div[4]/div[3]/div[1]/div[1]")).click();
+//		    Thread.sleep(4000);
+//		    driver.findElement(By.xpath("//body/div[@id='menu-fitness-profile-qa']/div[3]/ul[1]/li[2]"));
+//		    Thread.sleep(2000);
+//		    driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/section[2]/div[4]/div[4]/div[1]/div[1]")).click();
+//		    Thread.sleep(2000);
+//		    driver.findElement(By.xpath("//body/div[@id='menu-fitness-profile-qa']/div[3]/ul[1]/li[4]")).click();
+//		    Thread.sleep(2000);
+		    driver.findElement(By.xpath("//span[contains(text(),'Settings')]")).click();
+		    Thread.sleep(2000);
+		    driver.findElement(By.linkText("HOME")).click();
+		    Thread.sleep(2000);
+		    
   }
 	
 	@AfterMethod

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="neou.AccountPage">
+      <class name="neou.NeouSearch">
         <methods>
-          <include name="testAccount"/>
           <include name="tearDown"/>
           <include name="setUp"/>
+          <include name="testSearch"/>
         </methods>
-      </class> <!-- neou.AccountPage -->
+      </class> <!-- neou.NeouSearch -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
