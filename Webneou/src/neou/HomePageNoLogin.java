@@ -31,18 +31,26 @@ public class HomePageNoLogin {
 //Enter your billing details below:
     driver.findElement(By.name("name")).sendKeys("Test");
     driver.findElement(By.name("email")).sendKeys("raja@vuedata.in");
+    Thread.sleep(3000);
+//    driver.findElement(By.name("cardNumber")).sendKeys("4242424242424242");
+//    Thread.sleep(2000);
+//    driver.findElement(By.name("exp-date")).click();
+//    driver.findElement(By.name("exp-date")).sendKeys("1224");
+//    driver.findElement(By.name("cvc")).click();
+//    driver.findElement(By.name("exp-date")).sendKeys("123");
+//    Thread.sleep(3000);
 //Stripe third party payment components are not detecting in code because 
 //all three items are in same xpath(card number, cvv, date)  
     driver.findElement(By.id("icon/close")).click();
     driver.findElement(By.linkText("BROWSE")).click();
-    Thread.sleep(6000);
+    Thread.sleep(10000);
     //Program
     driver.findElement(By.xpath("//span[contains(text(),'Programs')]")).click();
-    Thread.sleep(6000);
+    Thread.sleep(8000);
     driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[2]/div[2]/div[3]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]/a[1]")).click();
-    Thread.sleep(6000);
+    Thread.sleep(8000);
     driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/button[1]/div[1]/img[1]")).click();
-    Thread.sleep(6000);
+    Thread.sleep(8000);
     driver.findElement(By.xpath("//span[contains(text(),'Start Workout')]")).click();
     Thread.sleep(15000);
     driver.navigate().back();
@@ -59,10 +67,10 @@ public class HomePageNoLogin {
     Thread.sleep(6000);
     
     if (driver.getPageSource().contains("Raja")) {
-        System.out.print("Pagenation and player test cases are passed");
+        System.out.print("Payment page navigation and player cases are passed");
       } else {
 
-        System.out.print("Pagenation and player test cases are Failed");
+        System.out.print("Payment page navigation and player cases are Failed");
         
       }
     

@@ -10,7 +10,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class NeouSearch {
+public class FavouriteFunc {
 
 	private WebDriver driver;
 	private static String baseUrl;
@@ -18,8 +18,6 @@ public class NeouSearch {
 	
 	@BeforeMethod
 	public void setUp() throws InterruptedException{
-		    // Need to seperate cases to run
-
 		    System.setProperty("webdriver.chrome.driver", "C:\\Users\\Raja\\Desktop\\chromedriver\\chromedriver.exe");
 		    driver = new ChromeDriver();
 		    baseUrl = "https://devleaderboard.neoufitness.com";
@@ -29,8 +27,8 @@ public class NeouSearch {
 		    
 	}
 		    
-	@Test(description = "Validate search functionality and Add to list")    
-			public void testSearch() throws InterruptedException {   
+	@Test(description = "Validate instructor Favorite")    
+			public void testFav() throws InterruptedException {   
 			driver.get(baseUrl);
 			driver.findElement(By.xpath("//body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]")).click();
 		    Thread.sleep(3000);
@@ -40,29 +38,35 @@ public class NeouSearch {
 		    driver.findElement(By.name("password")).sendKeys("Neou@123");
 		    driver.findElement(By.name("password")).sendKeys(Keys.ENTER);
 		    Thread.sleep(10000);
-		    //searchHomebutton
-		    driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/ul[1]/a[5]/div[1]/div[1]")).click();
+		    driver.findElement(By.linkText("BROWSE")).click();
 		    Thread.sleep(6000);
-		    driver.findElement(By.xpath("//input[@id='combobox']")).sendKeys("Wake Up Your Body!");
-		    Thread.sleep(6000);
-		    driver.findElement(By.xpath("//span[contains(text(),'SHOW RESULTS')]")).click();
-		    Thread.sleep(6000);
-		    driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/div[1]/section[1]/ul[1]/li[1]/div[1]/div[1]/div[1]/button[1]/div[1]/img[1]")).click();
-		    Thread.sleep(8000);
-		    driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[1]/button[1]")).click();
-		    Thread.sleep(3000);
-		    driver.findElement(By.xpath("//span[contains(text(),'Start Workout')]")).click();
-		    Thread.sleep(10000);
-		    driver.navigate().back();
+		    driver.findElement(By.xpath("//span[contains(text(),'Instructors')]")).click();
+		    Thread.sleep(7000);
+		    //un-fav
+		    driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[2]/div[2]/div[6]/div[1]/div[2]/div[2]/div[1]/div[3]/button[1]")).click();
 		    Thread.sleep(4000);
+		    driver.findElement(By.xpath("//span[contains(text(),'OK')]")).click();
+		    //fav
+		    driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[2]/div[2]/div[6]/div[1]/div[2]/div[1]/div[1]/div[3]/button[1]")).click();
+		    Thread.sleep(10000);
+		    //nav to inst. class
+		    driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[2]/div[2]/div[6]/div[1]/div[2]/div[1]/div[1]/div[2]/div[1]")).click();
+		    Thread.sleep(6000);
+		    driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/button[1]/div[1]/img[1]")).click();
+		    Thread.sleep(6000);
+		    driver.findElement(By.xpath("//span[contains(text(),'Start Workout')]")).click();
+		    Thread.sleep(15000);
+		    driver.navigate().back();
 		    driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/div[1]/button[1]/div[1]")).click();
 		    Thread.sleep(10000);
-		    ////body/div[@id='app']/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[3]/div[2]/div[1]/div[1]/div[2]/div[1]/div[3]/div[1]/div[1]/div[1]/div[1]
-		    if (driver.getPageSource().contains("Wake Up Your Body!")) {
-		        System.out.print("Class added to the list");
+		    //fav view all
+		    driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[4]/div[1]/a[1]")).click();
+		    Thread.sleep(10000);
+		    if (driver.getPageSource().contains("Adam Nelson")) {
+		        System.out.print("Adam's in the Fav list");
 		      } else {
 
-		        System.out.print("Class is not on the list");
+		        System.out.print("Adam's not in the Fav list");
 		      }
 		    Thread.sleep(3000);
 		    
