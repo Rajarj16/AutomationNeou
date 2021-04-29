@@ -109,6 +109,7 @@ public class RegressionSuite {
     Thread.sleep(10000);
     driver.findElement(By.xpath("//span[contains(text(),'Start Program')]")).click();
     Thread.sleep(8000);
+    //1
     driver.findElement(By.xpath("//span[contains(text(),'Start First Class')]")).click();
     Thread.sleep(5000);
     driver.findElement(By.xpath("//span[contains(text(),'Start Workout')]")).click();
@@ -116,10 +117,156 @@ public class RegressionSuite {
     Robot r = new Robot();
     r.keyPress(KeyEvent.VK_ESCAPE);
     Thread.sleep(3000);
-    
+    driver.findElement(By.xpath("//span[contains(text(),'MARK AS COMPLETE')]")).click();
+    Thread.sleep(7000);
+    driver.navigate().back();
+    Thread.sleep(5000);
+    //2
+    driver.findElement(By.xpath("//span[contains(text(),'Start Next Class')]")).click();
+    Thread.sleep(6000);
+    driver.findElement(By.xpath("//span[contains(text(),'Start Workout')]")).click();
+    Thread.sleep(15000);
+    Robot r1 = new Robot();
+    r1.keyPress(KeyEvent.VK_ESCAPE);
+    Thread.sleep(5000);
+    driver.findElement(By.xpath("//span[contains(text(),'MARK AS COMPLETE')]")).click();
+    Thread.sleep(7000);
+    driver.navigate().back();
+    Thread.sleep(5000);
+    //3
+    driver.findElement(By.xpath("//span[contains(text(),'Start Next Class')]")).click();
+    Thread.sleep(6000);
+    driver.findElement(By.xpath("//span[contains(text(),'Start Workout')]")).click();
+    Thread.sleep(15000);
+    Robot r2 = new Robot();
+    r2.keyPress(KeyEvent.VK_ESCAPE);
+    Thread.sleep(5000);
+    driver.findElement(By.xpath("//span[contains(text(),'MARK AS COMPLETE')]")).click();
+    Thread.sleep(7000);
+    driver.navigate().back();
+    Thread.sleep(5000);
+    //4
+    driver.findElement(By.xpath("//span[contains(text(),'Start Next Class')]")).click();
+    Thread.sleep(6000);
+    driver.findElement(By.xpath("//span[contains(text(),'Start Workout')]")).click();
+    Thread.sleep(15000);
+    Robot r3 = new Robot();
+    r3.keyPress(KeyEvent.VK_ESCAPE);
+    Thread.sleep(5000);
+    driver.findElement(By.xpath("//span[contains(text(),'MARK AS COMPLETE')]")).click();
+    Thread.sleep(7000);
+    driver.navigate().back();
+    Thread.sleep(5000);
+    //5
+    driver.findElement(By.xpath("//span[contains(text(),'Start Next Class')]")).click();
+    Thread.sleep(6000);
+    driver.findElement(By.xpath("//span[contains(text(),'Start Workout')]")).click();
+    Thread.sleep(15000);
+    Robot r4 = new Robot();
+    r4.keyPress(KeyEvent.VK_ESCAPE);
+    Thread.sleep(5000);
+    driver.findElement(By.xpath("//span[contains(text(),'MARK AS COMPLETE')]")).click();
+    Thread.sleep(7000);
+    driver.navigate().back();
+    Thread.sleep(5000);
+    //6
+    driver.findElement(By.xpath("//span[contains(text(),'Start Next Class')]")).click();
+    Thread.sleep(6000);
+    driver.findElement(By.xpath("//span[contains(text(),'Start Workout')]")).click();
+    Thread.sleep(15000);
+    Robot r5 = new Robot();
+    r5.keyPress(KeyEvent.VK_ESCAPE);
+    Thread.sleep(5000);
+    driver.findElement(By.xpath("//span[contains(text(),'MARK AS COMPLETE')]")).click();
+    Thread.sleep(7000);
+    driver.navigate().back();
+    Thread.sleep(5000);
+    //7
+    driver.findElement(By.xpath("//span[contains(text(),'Start Next Class')]")).click();
+    Thread.sleep(6000);
+    driver.findElement(By.xpath("//span[contains(text(),'Start Workout')]")).click();
+    Thread.sleep(15000);
+    Robot r6 = new Robot();
+    r6.keyPress(KeyEvent.VK_ESCAPE);
+    Thread.sleep(5000);
+    driver.findElement(By.xpath("//span[contains(text(),'MARK AS COMPLETE')]")).click();
+    Thread.sleep(7000);
+    driver.navigate().back();
+    Thread.sleep(5000);
+    //8
+    driver.findElement(By.xpath("//span[contains(text(),'Start Next Class')]")).click();
+    Thread.sleep(6000);
+    driver.findElement(By.xpath("//span[contains(text(),'Start Workout')]")).click();
+    Thread.sleep(15000);
+    Robot r7 = new Robot();
+    r7.keyPress(KeyEvent.VK_ESCAPE);
+    Thread.sleep(5000);
+    driver.findElement(By.xpath("//span[contains(text(),'MARK AS COMPLETE')]")).click();
+    Thread.sleep(7000);
+    driver.navigate().back();
+    Thread.sleep(5000);
+    //9
+    driver.findElement(By.xpath("//span[contains(text(),'Start Next Class')]")).click();
+    Thread.sleep(6000);
+    driver.findElement(By.xpath("//span[contains(text(),'Start Workout')]")).click();
+    Thread.sleep(15000);
+    Robot r8 = new Robot();
+    r8.keyPress(KeyEvent.VK_ESCAPE);
+    Thread.sleep(5000);
+    driver.findElement(By.xpath("//span[contains(text(),'MARK AS COMPLETE')]")).click();
+    Thread.sleep(7000);
+    driver.navigate().back();
+    Thread.sleep(5000);
+    //10
+    driver.findElement(By.xpath("//span[contains(text(),'Start Next Class')]")).click();
+    Thread.sleep(6000);
+    driver.findElement(By.xpath("//span[contains(text(),'Start Workout')]")).click();
+    Thread.sleep(15000);
+    Robot r9 = new Robot();
+    r9.keyPress(KeyEvent.VK_ESCAPE);
+    Thread.sleep(5000);
+    driver.findElement(By.xpath("//span[contains(text(),'MARK AS COMPLETE')]")).click();
+    Thread.sleep(7000);
+    driver.navigate().back();
+    Thread.sleep(5000);
+    //11
+    driver.findElement(By.xpath("//span[contains(text(),'Start Next Class')]")).click();
+    Thread.sleep(6000);
+    driver.findElement(By.xpath("//span[contains(text(),'Watch Now')]")).click();
+    Thread.sleep(15000);
+    Robot r10 = new Robot();
+    r10.keyPress(KeyEvent.VK_ESCAPE);
+//    Thread.sleep(5000);
+//    driver.findElement(By.xpath("//span[contains(text(),'MARK AS COMPLETE')]")).click();
+//    Thread.sleep(7000);
+    driver.navigate().back();
+    Thread.sleep(5000);
+    //12
+    driver.findElement(By.xpath("//body/div[@id='app']/div[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div[1]/div[2]/div[2]/div[12]/div[1]/button[1]/div[1]/img[1]")).click();
+    Thread.sleep(6000);
+    driver.findElement(By.xpath("//span[contains(text(),'Start Workout')]")).click();
+    Thread.sleep(15000);
+    Robot r11 = new Robot();
+    r11.keyPress(KeyEvent.VK_ESCAPE);
+    Thread.sleep(5000);
+    driver.findElement(By.xpath("//span[contains(text(),'MARK AS COMPLETE')]")).click();
+    Thread.sleep(7000);
+    driver.navigate().back();
+    Thread.sleep(5000);
+    //Congratulations!
+    if (driver.getPageSource().contains("Congratulations!")) {
+        System.out.print("Program completed and Test cases are passed");
+      } else {
+
+        System.out.print("Program not completed and Test cases are failed");
+      }
+    Thread.sleep(3000);
+    driver.findElement(By.linkText("BROWSE")).click();
+    Thread.sleep(6000);
     }
 	
-	@AfterMethod
+
+@AfterMethod
 	public void neouSignout() throws InterruptedException  {
 	driver.findElement(By.linkText("HOME")).click();
 	Thread.sleep(5000);
