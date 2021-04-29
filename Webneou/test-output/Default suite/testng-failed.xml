@@ -6,7 +6,7 @@
       <class name="neou.RegressionSuite">
         <methods>
           <include name="setUp"/>
-          <include name="regressionNeou"/>
+          <include name="regressionNeouProgram"/>
           <include name="neouSignout"/>
         </methods>
       </class> <!-- neou.RegressionSuite -->
